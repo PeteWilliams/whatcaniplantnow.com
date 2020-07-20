@@ -8,6 +8,11 @@
   Twitter: @PeteWilliams 
   Location: Guildford, UK 
 
+  Visual Design : Tom Ward
+  Site: http://www.tomwardstudio.com
+  Twitter: @tomwardstudio 
+  Location: Woking, UK 
+
 /* THANKS */
   Names (& URL): 
 

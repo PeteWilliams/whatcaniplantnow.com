@@ -29,11 +29,11 @@ audio[controls], canvas, video { display: inline-block; *display: inline; *zoom:
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
 
-html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; background: url(/img/background3.jpg) #493529}
 
-body { margin: 0; font-size: 13px; line-height: 1.231; }
+body { margin: 0; font-size: 15px; line-height: 1.231; }
 
-body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body, button, input, select, textarea { font-family: 'Cardo', sans-serif; color: #222; }
 
 /* 
  * These selection declarations have to be separate
@@ -41,8 +41,8 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
  * Also: hot pink!
  */
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #7C1085; color: #fff; text-shadow: none; }
+::selection { background: #7C1085; color: #fff; text-shadow: none; }
 
 
 /* =============================================================================
@@ -91,6 +91,10 @@ sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: b
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
+summary::-webkit-details-marker { display:none; }
+details>summary:first-of-type {
+    list-style-type: none;
+}
 
 /* =============================================================================
    Lists
@@ -201,27 +205,65 @@ table { border-collapse: collapse; border-spacing: 0; }
    ========================================================================== */
 
 
-body {
-	background-color: #AFCA41;
-}
-
 header, #main, footer {
-	margin: 0 auto;
+	background: #fef9f3;
+	padding:	0 25px;
+	margin: 	0 auto;
+	width:		810px;
+	overflow:   auto;
 }
 
-#main {
-		width:	910px;
-}
 
 header, footer {
 	text-align: center;
-	width:		750px;
+}
+
+header h1 {
+	background: url(/img/logotype.png) center center no-repeat;
+	height: 	87px;
+	width:		810px;
+	text-indent: -9999px;
 }
 
 header p {
 	clear:		both;	
 	text-align: left;
-	width:		575px;
+}
+
+h2 {
+	height:				54px;
+	margin: 			0;
+	width:				810px;
+	text-indent: 		-9999px;
+}
+
+#outdoors h2 {
+	background: url(/img/sow-outdoors.png) center center no-repeat #84d243;
+}
+#plant-outdoors h2 {
+	background: url(/img/plant-outdoors.png) center center no-repeat #84d243;
+}
+#indoors h2 {
+	background: url(/img/sow-under-cover.png) center center no-repeat #84d243;
+}
+
+h3 {
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+h4 {
+    float: 			left;
+	font-size: 		18px;
+    font-style: 	italic;
+    font-weight:	normal;
+    line-height: 	21px;
+    margin: 		0 0 0 5px;
+	
+}
+
+h4:before {
+	content: ' - ';
 }
 
 nav li {
@@ -230,7 +272,11 @@ nav li {
 }
 
 nav ol {
-	margin: auto 0;
+	height: 		23px;
+	padding: 		15px 33px;
+	margin: 		auto 0;
+	border-bottom: 	#84d243 1px solid;
+	border-top: 	#84d243 1px solid;
 }
 
 nav .selected {
@@ -238,18 +284,29 @@ nav .selected {
 }
 
 #main ol {
-	border:			1px solid black;
-	position:		relative;
-	margin-left:	80px;
-	width:			750px;
+	border:			1px solid #84d243;
+	border-width:	0 1px;
+	width:			808px;
 }
 
-#main ol > li {
-	background-position:	18px 14px;
+#main #indoors ol {
+	border-bottom: 1px solid #84d243;
+}
+
+#main ol li.clearfix {
+/*	background-color:		#AFCA41; */
+	background-position:	20px 22px;
 	background-repeat:		no-repeat;
-	border-bottom:			1px dashed black;
 	clear:					both;
-	padding:				14px 14px 14px 90px;
+	padding:				19px 14px 13px 100px;
+}
+
+.ie7 #main ol > li, .ie6 #main ol li.clearfix {
+	height: 77px;
+}
+
+#main ol > li:nth-child(even) {
+	background-color: #e9f2ce;
 }
 
 #main ol > li:last-child {
@@ -257,54 +314,125 @@ nav .selected {
 }
 
 ol li p {
-	float:	left;
-	width:	490px;
+	clear:			both;
+	float:			left;
+	width:			550px;
+	margin-bottom: 	0;
+	margin-top: 	10px;
 }
 
-.popup {
-	border:		1px solid black;
-	display:	block;
-	height:		55px;
-	padding:	10px;
-	position:	absolute;
-	top:		-100px;
-	right:		0;
-	width:		130px;
+#main p:first-child {
+	margin-left: 	33px;
+	padding-right: 	33px;
+	line-height: 	22px;
 }
 
-.popup img {
-	cursor:		pointer;
-	display:	none;	
+
+#main.promo p:first-child {
+	min-height: 	66px;
+	padding-right: 	220px;
 }
 
-#main h2 {
-	margin-left:	80px;	
+#promo a {
+	background: 		#fd3a01;
+	border-radius: 		91px;
+	color:				#fff;
+	display: 			block;
+	float:				right;	
+	font-size: 			17px;
+	margin-right: 		20px;
+	padding:			20px 10px;
+	width: 				163px;
+	height:				138px;
+	text-align: 		center;
+	text-decoration:	none;
+	vertical-align: 	middle;
+	position: 			relative;
+	top: 				-85px;
+	transition-property: background;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	behavior: url(/pie/PIE.htc);
+}
+
+#promo a i {
+	font-size: 19px;
+	display: block;
+}
+
+.ie6 #promo a i, .ie7 #promo a i, .ie8 #promo a i {
+	font-size: 17px;
+}
+
+.ie7 #main p:first-child {
+	margin: 15px 0 15px 33px;
+}
+.ie6 #main p {
+	margin: 15px 0 15px 33px;
+}
+.ie6 #main p#promo, .ie6 #main section p {
+	margin: auto;
+}
+
+.ie6 #promo {
+	display: none;
+}
+
+.ie7 #promo {
+	height: 0px;
+	margin: 0;
+}
+
+#promo a i:first-child {
+	font-size: 26px;
+}
+
+#promo a small {
+	font-size: 14px;
+	display: block;
+	margin-bottom: 7px;
+}
+
+#promo a:hover {
+	background: #f03701;
+}
+
+.ie7 hgroup, {
+	height: 21px;
 }
 
 #main h3 {
+	float:		left;
 	font-size:	16px;
-	margin:	0;
+	margin:		0;
 }
 
 #main h3 + p {
 	margin-top:	8px;	
 }
 
-#main p.links {
-	float: 		left;	
-	margin:		0;
-	position:	relative;
-	top:		-14px;
-	width:		155px;
+.buy {
+	background: 	url(/img/buy.png);
+	clear:			none;
+	float: 			left;	
+	margin:			0;
+	overflow:		hidden;
+	top:			-14px;
+	display:		block;
+	position:		relative;
+	float:			left;
+	text-indent: 	-999px;
+	margin-left:	75px;
+	height:			56px;
+	width:			62px;
 }
 
-.links a {
-	border:			1px solid black;
-	display:		block;
-	float:			left;
-	margin-left:	20px;
-	height:			52px;
-	width:			52px;
+.buy:hover {
+	background-position: -62px 0;
+}
+
+aside {
+	display: none;
 }
 
 .when {
@@ -325,13 +453,189 @@ ol li p {
 	margin-bottom:	6px;
 }
 
-/* VEG ICONS */
-.autumn-carrots {
-	background-image: url(../img/veg/carrot.png);
+/* OUTDOOR IMAGES */
+#main h1 {
+	margin:			0;
+	height:			159px;
+	text-indent:	-999px;
+	width:			810px;
 }
+
+#plant-outdoors, #indoors {
+	background-repeat: no-repeat;
+	padding-top: 159px;
+}
+
+#january #main h1 { background-image: url(/img/headers/january-outdoors.jpg);}
+#january #plant-outdoors { background-image: url(/img/headers/january-plant.jpg);}
+#january #indoors { background-image: url(/img/headers/january-indoors.jpg);}
+#february #main h1 { background-image: url(/img/headers/february-outdoors.jpg);}
+#february #plant-outdoors { background-image: url(/img/headers/february-plant.jpg);}
+#february #indoors { background-image: url(/img/headers/february-indoors.jpg);}
+#march #main h1 { background-image: url(/img/headers/march-outdoors.jpg);}
+#march #plant-outdoors { background-image: url(/img/headers/march-plant.jpg);}
+#march #indoors { background-image: url(/img/headers/march-indoors.jpg);}
+#april #main h1 { background-image: url(/img/headers/april-outdoors.jpg);}
+#april #plant-outdoors { background-image: url(/img/headers/april-plant.jpg);}
+#april #indoors { background-image: url(/img/headers/april-indoors.jpg);}
+#may #main h1 { background-image: url(/img/headers/may-outdoors.jpg);}
+#may #plant-outdoors { background-image: url(/img/headers/may-plant.jpg);}
+#may #indoors { background-image: url(/img/headers/may-indoors.jpg);}
+#june #main h1 { background-image: url(/img/headers/june-outdoors.jpg);}
+#june #plant-outdoors { background-image: url(/img/headers/june-plant.jpg);}
+#june #indoors { background-image: url(/img/headers/june-indoors.jpg);}
+#july #main h1 { background-image: url(/img/headers/july-outdoors.jpg);}
+#july #plant-outdoors { background-image: url(/img/headers/july-plant.jpg);}
+#july #indoors { background-image: url(/img/headers/july-indoors.jpg);}
+#august #main h1 { background-image: url(/img/headers/august-outdoors.jpg);}
+#august #plant-outdoors { background-image: url(/img/headers/august-plant.jpg);}
+#august #indoors { background-image: url(/img/headers/august-indoors.jpg);}
+#september #main h1 { background-image: url(/img/headers/september-outdoors.jpg);}
+#september #plant-outdoors { background-image: url(/img/headers/september-plant.jpg);}
+#september #indoors { background-image: url(/img/headers/september-indoors.jpg);}
+#october #main h1 { background-image: url(/img/headers/october-outdoors.jpg);}
+#october #plant-outdoors { background-image: url(/img/headers/october-plant.jpg);}
+#october #indoors { background-image: url(/img/headers/october-indoors.jpg);}
+#november #main h1 { background-image: url(/img/headers/november-outdoors.jpg);}
+#november #plant-outdoors { background-image: url(/img/headers/november-plant.jpg);}
+#november #indoors { background-image: url(/img/headers/november-indoors.jpg);}
+#december #main h1 { background-image: url(/img/headers/december-outdoors.jpg);}
+#december #plant-outdoors { background-image: url(/img/headers/december-plant.jpg);}
+#december #indoors { background-image: url(/img/headers/december-indoors.jpg);}
+
+header li {
+	float:		left;
+	margin:		0;
+}
+header li a {
+	display:		block;
+	height: 		22px;
+	margin-right: 	21px;
+	overflow: 		hidden;
+	text-indent: 	-9999px
+}
+
+a#jan { background:	url(/img/months/jan.png); width: 42px; }
+a#jan:hover, a#jan.selected { background-position: -42px; }
+
+a#feb { background:	url(/img/months/feb.png); width: 38px; }
+a#feb:hover, a#feb.selected { background-position: -38px; }
+
+a#mar { background:	url(/img/months/mar.png); width: 46px; }
+a#mar:hover, a#mar.selected { background-position: -46px; }
+
+a#apr { background:	url(/img/months/apr.png); width: 43px; height: 23px; }
+a#apr:hover, a#apr.selected { background-position: -43px; }
+
+a#may { background:	url(/img/months/may.png); width: 46px; }
+a#may:hover, a#may.selected { background-position: -46px; }
+
+a#jun { background:	url(/img/months/jun.png); width: 42px; }
+a#jun:hover, a#jun.selected { background-position: -42px; }
+
+a#jul { background:	url(/img/months/jul.png); width: 41px; height: 23px; }
+a#jul:hover, a#jul.selected { background-position: -41px; }
+
+a#aug { background:	url(/img/months/aug.png); width: 46px; height: 21px; }
+a#aug:hover, a#aug.selected { background-position: -46px; }
+
+a#sep { background:	url(/img/months/sep.png); width: 39px; height: 23px; }
+a#sep:hover, a#sep.selected { background-position: -39px; }
+
+a#oct { background:	url(/img/months/oct.png); width: 45px; }
+a#oct:hover, a#oct.selected { background-position: -45px; }
+
+a#nov { background:	url(/img/months/nov.png); width: 43px; }
+a#nov:hover, a#nov.selected { background-position: -43px; }
+
+a#dec { background:	url(/img/months/dec.png); width: 39px; margin-right: 0; }
+a#dec:hover, a#dec.selected { background-position: -39px; }
+
+
+/* VEG ICONS */
+.asparagus { background-image: url(/img/veg/asparagus.png);}
+.aubergine { background-image: url(/img/veg/aubergine.png);}
+.artichoke { background-image: url(/img/veg/artichoke.png);}
+.beetroot { background-image: url(/img/veg/beetroot.png);}
+.beans { background-image: url(/img/veg/beans.png);}
+.broad-beans { background-image: url(/img/veg/broad-beans.png);}
+.broccoli { background-image: url(/img/veg/broccoli.png);}
+.brussel-sprouts { background-image: url(/img/veg/brussel-sprouts.png);}
+.butternut-squash { background-image: url(/img/veg/squash-yellow.png);}
+.cabbage { background-image: url(/img/veg/cabbage.png);}
+.carrots { background-image: url(/img/veg/carrot.png);}
+.cauliflower { background-image: url(/img/veg/cauliflower.png);}
+.celery { background-image: url(/img/veg/celery.png);}
+.chillis { background-image: url(/img/veg/chilli.png);}
+.courgette { background-image: url(/img/veg/courgette.png);}
+.garlic { background-image: url(/img/veg/garlic.png);}
+.kale { background-image: url(/img/veg/kale.png);}
+.leeks { background-image: url(/img/veg/leeks.png);}
+.lettuce { background-image: url(/img/veg/lettuce.png);}
+.mushrooms { background-image: url(/img/veg/mushrooms.png);}
+.onions { background-image: url(/img/veg/onion.png);}
+.pak-choi { background-image: url(/img/veg/pak-choi.png);}
+.parsnip { background-image: url(/img/veg/parsnip.png);}
+.peas { background-image: url(/img/veg/peas.png);}
+.peppers { background-image: url(/img/veg/pepper.png);}
+.potato { background-image: url(/img/veg/potato.png);}
+.purple-sprouting-broccoli { background-image: url(/img/veg/purple-sprouting-broccoli.png);}
+.pumpkin { background-image: url(/img/veg/pumpkin.png);}
+.radish { background-image: url(/img/veg/radish.png);}
+.red-onions { background-image: url(/img/veg/red-onion.png);}
+.rocket { background-image: url(/img/veg/rocket.png);}
+.runner-beans { background-image: url(/img/veg/runner-beans.png);}
+.salad-leaves { background-image: url(/img/veg/salad-leaves.png);}
+.shallot { background-image: url(/img/veg/shallots.png);}
+.spinach { background-image: url(/img/veg/spinach.png);}
+.spring-onion { background-image: url(/img/veg/spring-onions.png);}
+.sprouting-broccoli { background-image: url(/img/veg/sprouting-broccoli.png);}
+.squash { background-image: url(/img/veg/squash-acorn.png);}
+.swede { background-image: url(/img/veg/swede.png);}
+.sweetcorn { background-image: url(/img/veg/corn.png);}
+.chard { background-image: url(/img/veg/chard.png);}
+.tomato { background-image: url(/img/veg/tomato.png); }
+.turnip { background-image: url(/img/veg/turnip.png); }
 
 .no-details details > * { display: none; }
 .no-details details summary { display: block; }
+
+footer p {
+	float: 	right;
+	margin: 26px 0;
+}
+footer p:first-child {
+	float: left;
+}
+
+.ie6 footer p {
+	float:	left;
+	margin-right: 25px;
+}
+
+footer a:link, footer a:visited {
+	border-bottom: 1px dotted #000;
+	color: #000;
+	text-decoration: none;
+}
+
+ footer a:hover, footer a:active {
+	border-bottom: 1px dotted #45823b;
+	color: #45823b;
+	text-decoration: none;
+}
+
+footer a {
+	transition-property: color;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	transition-property: border-bottom:;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+}
+
+
+
 
 /* =============================================================================
    Non-semantic helper classes
